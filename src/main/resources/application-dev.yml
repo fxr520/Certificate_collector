@@ -1,0 +1,42 @@
+server:
+  port: 3010
+
+spring:
+
+  #MySQL配置
+  datasource:
+    username: root
+    password: 2816077466
+    url: jdbc:mysql://localhost:3306/certificate_collector?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  #JPA配置
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+#log配置
+logging:
+  level:
+    root: info
+    com.fxr.certificate_collector: debug
+  file:
+    name: log/certificate_collector-dev.log
+
+  #redis配置
+#  redis:
+#    host: 127.0.0.1
+#    port: 6379
+#    password:
+#      pool:
+#        #最大连接数
+#        max-active: 8
+#        #最大阻塞等待时间
+#        max-wait: 5000
+#        #最大空闲连接
+#        max-idle: 8
+#        #最小空闲连接
+#        min-idle: 0
+#        # 连接超时时间（毫秒）
+#        timeout: 5000
